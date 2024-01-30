@@ -4,11 +4,9 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        n=len(nums)+1
-        hashmap={}
-        for index,value in enumerate(nums):
-            hashmap[index]=value
-             
-        for i in range(0,n):
-            if i not in nums:
-                return i
+        n=len(nums)
+        sum =( n*(n+1))/2
+        total=0
+        for i in nums:
+            total+=i
+        return (sum-total)
