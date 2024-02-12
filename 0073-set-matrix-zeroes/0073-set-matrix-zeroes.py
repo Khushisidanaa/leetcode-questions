@@ -7,19 +7,17 @@ class Solution(object):
         """
         m = len(matrix)
         n = len(matrix[0]) 
-        r=[]
-        c=[]
+        r=set()
+        c=set()
         for i in range(m):
             for j in range(n):
                 if matrix[i][j] == 0:
-                    r.append(i)
-                    c.append(j)
-        for p in range(len(r)):
-            i=r[p]
-            j=c[p]
-            for k in range(n):
-                matrix[i][k]=0
-            for l in range(m):
-                matrix[l][j]=0
-        return matrix
+                    r.add(i)
+                    c.add(j)
+        for i in range(m):
+            for j in range(n):
+                if i in r or  j in c:
+                    matrix[i][j]=0
+       
                     
+             
