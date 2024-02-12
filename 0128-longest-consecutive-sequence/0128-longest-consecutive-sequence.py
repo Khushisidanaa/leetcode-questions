@@ -1,24 +1,15 @@
 class Solution(object):
     def longestConsecutive(self, nums):
         """
-        :type nums: List[int]
-        :rtype: int
         """
-        hash={}
-        for i in nums:
-            hash[i] = 'True'  
-        maxcount=0
-       
-        for i in hash:
-            if i-1 not in hash:
-                count=1
-                j=1
-                while i+j in hash:
-                        count+=1
-                        j+=1
-                if count>maxcount:
-                    maxcount=count
-        return maxcount
-                
-            
-            
+        longest = 0
+        num_set = set(nums)
+
+        for n in num_set:
+            if (n-1) not in num_set:
+                length = 1
+                while (n+length) in num_set:
+                    length += 1
+                longest = max(longest, length)
+        
+        return longest
