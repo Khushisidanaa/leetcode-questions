@@ -7,7 +7,7 @@ class Solution(object):
         """
         def firstsolution(nums,low,high,target):
             first=-1
-            while low<=high and high>=0 and low<=len(nums)-1:
+            while low<=high :
                 mid=(low+high)/2
                 if nums[mid]==target:
                     first=mid
@@ -22,7 +22,7 @@ class Solution(object):
         
         def lastelement(nums,low,high,target):
             last=-1
-            while low<=high and  high>=0 and low<=len(nums)-1:
+            while low<=high  :
                 mid=(low+high)/2
                 if nums[mid]==target:
                    
