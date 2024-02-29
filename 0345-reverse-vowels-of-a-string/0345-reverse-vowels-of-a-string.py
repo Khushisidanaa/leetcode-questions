@@ -3,9 +3,10 @@ class Solution:
         vowels=['a','e','i','o','u','A','E','I','O','U']
         l=0
         r=len(s)-1
+        s=list(s)
         while l<r:
             if s[l] in vowels and s[r] in vowels:
-                s= s[0:l]+s[r]+s[l+1:r]+s[l]+s[r+1:]
+                s[l],s[r]=s[r],s[l]
                 l+=1
                 r-=1
             else: 
@@ -13,5 +14,5 @@ class Solution:
                     l+=1
                 if s[r] not in vowels: 
                     r-=1    
-        return s
+        return "".join(s)
         
